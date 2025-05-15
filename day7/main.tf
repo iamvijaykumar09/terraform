@@ -1,5 +1,5 @@
-provider "aws"{
-    region = "ap-south-1"
+provider "aws" {
+  region = "ap-south-1"
   //shared_credentials_files = [ "/workspaces/terraform/day7/credentials" ]
 }
 
@@ -12,13 +12,13 @@ locals {
 }
 
 resource "aws_instance" "vm" {
-    ami = "ami-0e35ddab05955cf57"
+  ami = "ami-0e35ddab05955cf57"
 
-    instance_type = var.instance_type
+  instance_type = var.instance_type
 
-    tags = {
-        Name = local.instance_name
-    }
+  tags = {
+    Name = local.instance_name
+  }
 }
 
 //using environmtent variables
